@@ -1,0 +1,48 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)" novalidate *ngIf="element && form && key && model && type">
+  <md-input-container>
+
+    <!-- text -->
+    <input 
+      mdInput 
+
+      [autocomplete]    = "autocomplete"
+      formControlName   = "{{key}}" 
+      [max]             = "max"
+      [min]             = "min"
+      [maxlength]       = "maxlength"
+      [minlength]       = "minlength"
+      [placeholder]     = "placeholder"
+      [readonly]        = "readonly"
+      [type]            = "type"
+
+      (change)          = "onChange($event)"
+      (focus)           = "onFocus($event)"
+      (keyup)           = "onKeyUp($event)"
+    />
+    <md-hint [align]="'end'" *ngIf="hint === 'maxlength' && maxlength">
+      {{input.value.length}} / {{maxlength}}
+    </md-hint>
+    <div *ngFor="let error of errors " class="errors">
+      {{error.message}}
+    </div>
+  </md-input-container>
+  <!--
+  <div class="debug" *ngIf="debug === true">
+    <h3>InputComponent</h3>
+    <p *ngIf="autocomplete"><strong>autocomplete:</strong> {{autocomplete}}</p>
+    <p><strong>disabled:</strong> {{disabled}}</p>
+    <p><strong>form value:</strong> {{form.value | json}}</p>
+    <p><strong>formControlName (key):</strong> {{key}}</p>
+
+    <p *ngIf="max"><strong>max:</strong> {{max}}</p>
+    <p *ngIf="min"><strong>min:</strong> {{min}}</p>
+    <p *ngIf="maxlength"><strong>maxlength:</strong> {{maxlength}}</p>
+    <p *ngIf="minlength"><strong>minlength:</strong> {{minlength}}</p>
+
+    <p><strong>model:</strong> {{model | json}}</p>
+    <p><strong>placeholder:</strong> {{placeholder}}</p>
+    <p><strong>required:</strong> {{required}}</p>
+    <p><strong>type:</strong> {{type}}</p>
+  </div>
+  -->
+</form>

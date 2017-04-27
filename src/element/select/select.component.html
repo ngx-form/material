@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit($event)" [formGroup]="form" novalidate *ngIf="form && key && model">
+  <input type="hidden" formControlName="_id" />
+  <md-select 
+    #select         = "mdSelect" 
+
+    formControlName = "{{key}}" 
+    placeholder     = "{{placeholder}}" 
+
+    [(ngModel)]     = "model[key]" 
+
+    (change)        = "onChange($event)" 
+    (onClose)       = "onClose($event)"
+    (focus)         = "onFocus($event)"
+  >
+    <md-option *ngFor="let option of options" [value]="option[key]">
+      {{objectGet(option, viewValue)}}
+    </md-option>
+  </md-select>
+  <a style="display: none;" #open (click)="select.open()">open</a>
+  <div class="debug" *ngIf="debug === true">
+    <p><strong>disabled:</strong> {{disabled}}</p>
+    <p><strong>form value:</strong> {{form.value | json}}</p>
+    <p><strong>formControlName (key):</strong> {{key}}</p>
+    <p><strong>model:</strong> {{model | json}}</p>
+    <p><strong>placeholder:</strong> {{placeholder}}</p>
+    <p><strong>required:</strong> {{required}}</p>
+  </div>
+</form>
