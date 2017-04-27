@@ -6,7 +6,7 @@ Angular Material components to set html dynamic elements configuration of @ngx-f
 
 
 ## Table of contents
-* [Demo] (#demo)
+* [Demo](#demo)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Versioning](#versioning)
