@@ -6,6 +6,7 @@ Angular Material components to set html dynamic elements configuration of @ngx-f
 
 
 ## Table of contents
+* [Demo] (#demo)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Versioning](#versioning)
@@ -13,6 +14,10 @@ Angular Material components to set html dynamic elements configuration of @ngx-f
 * [License](#license)
 * [Donate](#donate)
 
+
+## Demo
+
+Usage demonstration of a @ngx-form/material package coming soon
 
 ## Installation
 
@@ -25,7 +30,7 @@ npm install --save @ngx-form/element @ngx-form/material
 ## Usage
 ```typescript
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -36,7 +41,7 @@ import { FormMaterialModule, FormMaterialInputComponent, FormMaterialSelectCompo
 @NgModule({
   imports: [
     // external
-    CommonModule,
+    BrowserModule,
     FormsModule,
     MaterialModule,
     ReactiveFormsModule,
