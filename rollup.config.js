@@ -1,7 +1,7 @@
 
-import nodeResolve  from 'rollup-plugin-node-resolve';
-import commonjs     from 'rollup-plugin-commonjs';
-import uglify       from 'rollup-plugin-uglify';
+import nodeResolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import uglify from 'rollup-plugin-uglify';
 
 export default {
   entry: 'dist/index.js',
@@ -12,11 +12,15 @@ export default {
   moduleName: '@ngx-form/material',
   onwarn,
   plugins: [
-      commonjs({
-          include: 'node_modules/rxjs/**',
-      }),
-      nodeResolve({ jsnext: true, module: true }),
-      uglify()  
+    commonjs({
+      include: 'node_modules/rxjs/**',
+    }),
+    nodeResolve({
+      jsnext: true,
+      module: true,
+      extensions: [ '.js', '.json', 'html']
+    }),
+    uglify()
   ],
   globals: {
     '@angular/animations': 'ng.animations',
