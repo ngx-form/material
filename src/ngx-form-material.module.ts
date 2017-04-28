@@ -8,6 +8,10 @@ import { MaterialModule } from '@angular/material';
 import { FormMaterialInputComponent, FormMaterialSelectComponent } from './element';
 
 @NgModule({
+  declarations: [
+    FormMaterialInputComponent,
+    FormMaterialSelectComponent
+  ],
   entryComponents: [
     FormMaterialInputComponent,
     FormMaterialSelectComponent
