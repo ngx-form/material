@@ -7,6 +7,7 @@ import { InputAbstractClass } from './input.class';
 
 const template = require('./input.component.html');
 
+
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
   encapsulation: ViewEncapsulation.None,
