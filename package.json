@@ -25,6 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "@angular/animations": "^4.3.0",
+    "@angular/cdk": "^2.0.0-beta.8",
     "@angular/forms": "^4.3.0",
     "@angular/http": "^4.3.0",
     "@angular/material": "^2.0.0-beta.8",
@@ -53,7 +54,7 @@
     "karma-coverage": "^1.1.1",
     "karma-firefox-launcher": "^1.0.1",
     "karma-jasmine": "^1.1.0",
-    "karma-rollup-plugin": "^0.2.4",
+    "karma-rollup-preprocessor": "^4.0.1",
     "karma-typescript": "^3.0.4",
     "lodash": "^4.17.4",
     "next-update": "^3.5.3",
