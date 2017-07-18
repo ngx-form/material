@@ -1,25 +1,44 @@
 // external
-import { Component, ChangeDetectionStrategy, ElementRef, ViewEncapsulation } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
+import { MdInputDirective } from '@angular/material';
+import { FormElementComponent } from '@ngx-form/element';
 
 // internal
-import { InputAbstractClass } from './input.class';
+import { ElementAbstractClass } from './../element.class';
 
-const template = require('./input.component.html');
-
+import template from './input.component.html';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.Default,
   encapsulation: ViewEncapsulation.None,
   template
 })
-export class FormMaterialInputComponent extends InputAbstractClass {
+export class FormMaterialInputComponent extends ElementAbstractClass implements AfterViewInit, OnInit {
+  @ViewChild('input', { read: MdInputDirective }) input: MdInputDirective;
+  @ViewChild('input', { read: ElementRef }) inputElementRef: ElementRef;
+  ready = false;
+  differ = {};
 
-  constructor(
-    elementRef: ElementRef,
-    formBuilder: FormBuilder
-  ) {
-    super(elementRef, formBuilder);
-    this.focus();
+  constructor(private changeDetectorRef: ChangeDetectorRef) {
+    super();
+  }
+
+  ngAfterViewInit() {
+  }
+
+  ngOnInit() {
+    if (this.focus === true) {
+      setTimeout(() => {
+        this.input.focus();
+        this.inputElementRef.nativeElement.focus();
+      });
+    }
   }
 }
