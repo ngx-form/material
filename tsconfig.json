@@ -7,6 +7,7 @@
   },
   "compileOnSave": false,
   "compilerOptions": {
+    "rootDir": "src",
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -29,7 +30,7 @@
     ]
   },
   "files": [
-    "src/index.ts",
-    "typings.d.ts"
+    "typings.d.ts",
+    "src/index.ts"
   ]
 }
