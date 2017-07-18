@@ -1,8 +1,11 @@
-<img src="https://github.com/ngx-form/element/blob/master/color_logo_transparent_background.png" alt="ngx-form logo" title="ngx-form" align="right" width="128" />
+<img src="http://ngx-form.wwwdev.io/color_logo_transparent_background.png" alt="ngx-form logo" title="ngx-form" align="right" width="128" />
 
 # @ngx-form/material
 
 Angular Material components to set html dynamic elements configuration of @ngx-form/element package
+
+
+** **Work in progress** **
 
 
 ## Table of contents
@@ -24,51 +27,11 @@ Usage demonstration of a @ngx-form/material package coming soon
 To install, run:
 
 ```bash
-npm install --save @ngx-form/element @ngx-form/material
+npm install --save @ngx-form/material
 ```
 
 ## Usage
 ```typescript
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { MaterialModule } from '@angular/material';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-// internal
-import { FormElementModule } from '@ngx-form/element';
-import { FormMaterialModule, FormMaterialInputComponent, FormMaterialSelectComponen } from '@ngx-form/material';
-
-@NgModule({
-  imports: [
-    // external
-    BrowserModule,
-    FormsModule,
-    MaterialModule,
-    ReactiveFormsModule,
-
-    // internal
-    FormElementModule.forRoot({
-      types: [
-        {
-          type: 'input',
-          component: FormMaterialInputComponent
-        },
-        {
-          type: 'select',
-          component: FormMaterialSelectComponent
-        }
-      ]
-    }),
-    FormMaterialModule
-  ],
-  declarations: [
-    AngularDatatableComponent,
-    AngularDatatableColumnComponent,
-    AngularDatatableHeaderComponent,
-    AngularDatatableRowsComponent
-  ]
-})
-export class ExampleModule { }
 ```
 
 ## Versioning
@@ -94,7 +57,7 @@ How do I know when to release 1.0.0?
 
 ## License
 
-MIT © wwwdev.io
+MIT © ngx-form
 
 ## Donate
 [Click to donate](https://donorbox.org/help-creating-open-source-software)
