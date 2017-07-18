@@ -1,26 +1,30 @@
 // external
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
-
 // internal
-import { FormMaterialInputComponent, FormMaterialSelectComponent } from './element';
+import { FormElementModule } from '@ngx-form/element';
+import {
+  FormMaterialInputComponent
+} from './element';
+// get config
+import { elementsConfig } from './ngx-form-material.config';
 
 @NgModule({
   declarations: [
-    FormMaterialInputComponent,
-    FormMaterialSelectComponent
+    FormMaterialInputComponent
   ],
   entryComponents: [
-    FormMaterialInputComponent,
-    FormMaterialSelectComponent
+    FormMaterialInputComponent
   ],
   imports: [
     CommonModule,
-    FormsModule,
+    FormElementModule.forRoot(elementsConfig),
     MaterialModule,
     ReactiveFormsModule
   ]
 })
-export class FormMaterialModule { }
+export class FormMaterialModule {
+  constructor() { }
+}
