@@ -1,48 +1,68 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit($event)" novalidate *ngIf="element && form && key && model && type">
-  <md-input-container>
+<div [formGroup]="formGroup" *ngIf="formGroup && key">
 
-    <!-- text -->
-    <input 
+  <!-- Container -->
+  <md-input-container
+    *ngIf="element && model && attributes?.type"
+    [color]="attributes?.color"
+    [floatPlaceholder]="attributes?.floatPlaceholder"
+    [hideRequiredMarker]="attributes?.hideRequiredMarker"
+    [hintLabel]="attributes?.hintLabel"
+  >
+    <label [attr.for]="key" *ngIf="label">
+      {{label}}
+    </label>
+
+    <!-- Custom placeholder -->
+    <md-placeholder *ngIf="mdPlaceholder">
+      {{mdPlaceholder}}
+    </md-placeholder>
+
+    <!-- mdPrefix -->
+    <span *ngIf="mdPrefix" mdPrefix>{{mdPrefix}} &nbsp; </span>
+    <!-- Just input -->
+    <input
       mdInput 
+      formControlName = "{{key}}"
+      [(ngModel)] = "model[key]"
 
-      [autocomplete]    = "autocomplete"
-      formControlName   = "{{key}}" 
-      [max]             = "max"
-      [min]             = "min"
-      [maxlength]       = "maxlength"
-      [minlength]       = "minlength"
-      [placeholder]     = "placeholder"
-      [readonly]        = "readonly"
-      [type]            = "type"
+      [attr.autocomplete] = "(attributes?.autocomplete && attributes?.type === 'text') ? attributes?.autocomplete : null"
+      [attr.autofocus] = "attributes?.autofocus ? attributes?.autofocus : null"
+      [attr.max] = "(attributes?.max && attributes?.type === 'number') ? attributes?.max : null"
+      [attr.min] = "(attributes?.min && attributes?.type === 'number') ? attributes?.min : null"
+      [attr.maxlength] = "(attributes?.maxlength && attributes?.type === 'text') ? attributes?.maxlength : null"
+      [attr.minlength] = "(attributes?.minlength && attributes?.type === 'text') ? attributes?.minlength : null"
+      [attr.readonly] = "(attributes?.readonly) ? attributes?.readonly : null"
 
-      (change)          = "onChange($event)"
-      (focus)           = "onFocus($event)"
-      (keyup)           = "onKeyUp($event)"
+      [id] = "attributes?.id"
+      [placeholder] = "(attributes?.placeholder && !attributes.mdPlaceholder) ? attributes.placeholder : null"
+      [required] = "attributes?.required"
+      [type] = "attributes?.type"
+
+      (change) = "onChange($event)"
+      (focus) = "onFocus($event)"
+      (keyup) = "onKeyUp($event)"
+
+      #input
     />
-    <md-hint [align]="'end'" *ngIf="hint === 'maxlength' && maxlength">
-      {{input.value.length}} / {{maxlength}}
+    <!-- mdSuffix -->
+    <md-icon *ngIf="mdSuffix" mdSuffix>{{mdSuffix}}</md-icon>
+
+    <md-hint align="end" *ngIf="mdHint?.end" [ngSwitch]="mdHint.end">
+      <span *ngSwitchCase="'maxlength'">{{model[key].length}} / {{attributes?.maxlength}}</span>
+      <span *ngSwitchDefault>{{mdHint.end}}</span>
     </md-hint>
-    <div *ngFor="let error of errors " class="errors">
-      {{error.message}}
-    </div>
+    <md-hint align="start" *ngIf="mdHint?.start" [ngSwitch]="mdHint.start">
+      <span *ngSwitchCase="'maxlength'">{{model[key].length}} / {{attributes?.maxlength}}</span>
+      <span *ngSwitchDefault>{{mdHint.start}}</span>
+    </md-hint>
+
+    <!-- Validation messages -->
+    <md-error *ngIf="formGroup.controls[key].hasError('required')">
+      Required
+    </md-error>
+    <md-error *ngIf="formGroup.controls[key].hasError('max')">
+      Max number is 
+      {{formGroup.controls[key].errors.max.actual}} / {{formGroup.controls[key].errors.max.max}}
+    </md-error>
   </md-input-container>
-  <!--
-  <div class="debug" *ngIf="debug === true">
-    <h3>InputComponent</h3>
-    <p *ngIf="autocomplete"><strong>autocomplete:</strong> {{autocomplete}}</p>
-    <p><strong>disabled:</strong> {{disabled}}</p>
-    <p><strong>form value:</strong> {{form.value | json}}</p>
-    <p><strong>formControlName (key):</strong> {{key}}</p>
-
-    <p *ngIf="max"><strong>max:</strong> {{max}}</p>
-    <p *ngIf="min"><strong>min:</strong> {{min}}</p>
-    <p *ngIf="maxlength"><strong>maxlength:</strong> {{maxlength}}</p>
-    <p *ngIf="minlength"><strong>minlength:</strong> {{minlength}}</p>
-
-    <p><strong>model:</strong> {{model | json}}</p>
-    <p><strong>placeholder:</strong> {{placeholder}}</p>
-    <p><strong>required:</strong> {{required}}</p>
-    <p><strong>type:</strong> {{type}}</p>
-  </div>
-  -->
-</form>
+</div>
