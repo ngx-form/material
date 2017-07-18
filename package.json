@@ -1,6 +1,6 @@
 {
   "name": "@ngx-form/material",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Angular Material components to set html dynamic elements configuration of @ngx-form/element package",
   "author": "Ścibor Rudnicki <scibor.rudnicki@wwwdev.io> (http://ngx-form.wwwwdev.io)",
   "homepage": "https://github.com/ngx-form/material#readme",
