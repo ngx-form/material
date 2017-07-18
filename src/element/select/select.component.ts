@@ -1,5 +1,5 @@
 // external
-import { Component, ChangeDetectionStrategy, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MdSelect } from '@angular/material';
 
@@ -19,11 +19,16 @@ export class FormMaterialSelectComponent extends ElementAbstractClass {
   @ViewChild('select') select: MdSelect;
   @ViewChild('open') open: any;
 
+  _options: any;
+  @Input() set options(options: any) { this._options = options; }
+  get options(): any { return this._options; }
+
   constructor(
     formBuilder: FormBuilder,
     elementRef: ElementRef
   ) {
-    super(elementRef, formBuilder);
+    // super(elementRef, formBuilder);
+    super();
     this.focus();
   }
 
