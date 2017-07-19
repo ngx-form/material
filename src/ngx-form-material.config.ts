@@ -1,10 +1,6 @@
-import {
-  FormMaterialInputComponent
-} from './element';
 
-import {
-  FormElementConfig
-} from '@ngx-form/element';
+import { FormMaterialInputComponent } from './element';
+import { FormElementConfig } from '@ngx-form/element';
 
 export const elementsConfig: FormElementConfig = {
   elements: [
