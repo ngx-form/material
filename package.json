@@ -29,7 +29,7 @@
     "@angular/forms": "^4.3.0",
     "@angular/http": "^4.3.0",
     "@angular/material": "^2.0.0-beta.8",
-    "@ngx-form/element": "^1.0.4-beta.0",
+    "@ngx-form/element": "^2.0.2-beta.1",
     "@ngx-form/interface": "^0.5.1",
     "@ngx-form/type": "^0.1.6"
   },
