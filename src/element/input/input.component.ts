@@ -1,6 +1,5 @@
 // external
 import {
-  AfterViewInit,
   ChangeDetectorRef,
   Component,
   ElementRef,
@@ -20,7 +19,7 @@ import template from './input.component.html';
   encapsulation: ViewEncapsulation.None,
   template
 })
-export class FormMaterialInputComponent extends ElementAbstractClass implements AfterViewInit, OnInit {
+export class FormMaterialInputComponent extends ElementAbstractClass implements OnInit {
   @ViewChild('input', { read: MdInputDirective }) input: MdInputDirective;
   @ViewChild('input', { read: ElementRef }) inputElementRef: ElementRef;
   ready = false;
@@ -30,8 +29,6 @@ export class FormMaterialInputComponent extends ElementAbstractClass implements 
     super();
   }
 
-  ngAfterViewInit() {
-  }
 
   ngOnInit() {
     if (this.focus === true) {
