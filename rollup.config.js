@@ -20,7 +20,10 @@ export default {
       }
     }),
     html({
-      include: '**/*.html',
+      include: [
+        '../**/*.html',
+        '**/*.html'
+      ],
       htmlMinifierOptions: {
         caseSensitive: true // need to do not lower letter
       }
@@ -43,7 +46,7 @@ export default {
       // – see https://github.com/rollup/rollup-plugin-commonjs
       main: true,  // Default: true
 
-      extensions: [ '.js', '.json', 'html']
+      extensions: [ '.js', '.json', '.html']
     }),
     typescript({
       typescript: require('./node_modules/typescript')
