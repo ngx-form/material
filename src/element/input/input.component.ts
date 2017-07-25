@@ -26,7 +26,6 @@ export class FormMaterialInputComponent extends ElementAbstractClass implements 
   @ViewChild('input', { read: ElementRef }) inputElementRef: ElementRef;
   ready = false;
   differ = {};
-  error: Object;
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {
     super();

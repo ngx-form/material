@@ -19,7 +19,7 @@ import { MdInputAttributesInterface } from '@ngx-form/interface';
 export abstract class ElementAbstractClass {
   attributes: MdInputAttributesInterface;
   element: element;
-  errors: any;
+  error: Object;
   focus: boolean;
   formGroup: FormGroup;
   formControlName: string;
