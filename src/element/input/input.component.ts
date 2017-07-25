@@ -1,8 +1,10 @@
 // external
 import {
+  AfterViewChecked,
   ChangeDetectorRef,
   Component,
   ElementRef,
+  OnDestroy,
   OnInit,
   ViewChild,
   ViewEncapsulation
@@ -24,11 +26,11 @@ export class FormMaterialInputComponent extends ElementAbstractClass implements 
   @ViewChild('input', { read: ElementRef }) inputElementRef: ElementRef;
   ready = false;
   differ = {};
+  error: Object;
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {
     super();
   }
-
 
   ngOnInit() {
     if (this.focus === true) {
