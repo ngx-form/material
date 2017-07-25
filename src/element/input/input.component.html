@@ -41,6 +41,7 @@
       (change) = "onChange($event)"
       (focus) = "onFocus($event)"
       (keyup) = "onKeyUp($event)"
+      (onsubmit) = "onSubmit($event)"
 
       #input
     />
@@ -56,13 +57,8 @@
       <span *ngSwitchDefault>{{mdHint.start}}</span>
     </md-hint>
 
-    <!-- Validation messages -->
-    <md-error *ngIf="formGroup.controls[key].hasError('required')">
-      Required
-    </md-error>
-    <md-error *ngIf="formGroup.controls[key].hasError('max')">
-      Max number is 
-      {{formGroup.controls[key].errors.max.actual}} / {{formGroup.controls[key].errors.max.max}}
-    </md-error>
+    <md-error [innerHTML]="error?.message"></md-error>
+
   </md-input-container>
+
 </div>
