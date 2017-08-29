@@ -46,15 +46,23 @@
       #input
     />
     <!-- mdSuffix -->
-    <md-icon *ngIf="mdSuffix" mdSuffix>{{mdSuffix}}</md-icon>
+    <md-icon *ngIf="mdSuffix" mdSuffix>
+      {{mdSuffix}}
+    </md-icon>
 
     <md-hint align="end" *ngIf="mdHint?.end" [ngSwitch]="mdHint.end">
-      <span *ngSwitchCase="'maxlength'">{{model[key].length}} / {{attributes?.maxlength}}</span>
-      <span *ngSwitchDefault>{{mdHint.end}}</span>
+      <span *ngSwitchCase="'maxlength'">
+        {{model[key]?.length}} / {{attributes?.maxlength}}
+      </span>
+      <span *ngSwitchDefault>
+        {{mdHint.end}}
+      </span>
     </md-hint>
     <md-hint align="start" *ngIf="mdHint?.start" [ngSwitch]="mdHint.start">
-      <span *ngSwitchCase="'maxlength'">{{model[key].length}} / {{attributes?.maxlength}}</span>
-      <span *ngSwitchDefault>{{mdHint.start}}</span>
+      <span *ngSwitchCase="'maxlength'">{{model[key]?.length || 0}} / {{attributes?.maxlength}}</span>
+      <span *ngSwitchDefault>
+        {{mdHint.start}}
+      </span>
     </md-hint>
 
     <md-error [innerHTML]="error?.message"></md-error>
