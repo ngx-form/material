@@ -15,11 +15,9 @@ import { FormElementComponent } from '@ngx-form/element';
 // internal
 import { ElementAbstractClass } from './../element.class';
 
-import template from './input.component.html';
-
 @Component({
   encapsulation: ViewEncapsulation.None,
-  template
+  templateUrl: './input.component.html'
 })
 export class FormMaterialInputComponent extends ElementAbstractClass implements OnInit {
   @ViewChild('input', { read: MdInputDirective }) input: MdInputDirective;

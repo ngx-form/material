@@ -6,12 +6,11 @@ import { MdSelect } from '@angular/material';
 // internal
 import { ElementAbstractClass } from './../element.class';
 
-const template = require('./select.component.html');
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
   encapsulation: ViewEncapsulation.None,
-  template
+  templateUrl: './select.component.html'
 })
 export class FormMaterialSelectComponent extends ElementAbstractClass {
   debug = true;
