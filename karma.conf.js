@@ -7,7 +7,6 @@ const typescript = require('rollup-plugin-typescript');
 const uglify = require('rollup-plugin-uglify');
 const uglifyEs = require('uglify-es');
 
-
 // rollup-plugin-angular addons
 const sass = require('node-sass');
 const CleanCSS = require('clean-css');
@@ -59,6 +58,7 @@ module.exports = function(config) {
     preprocessors: {
       'test/*.ts': ['rollup'],
       'src/*.spec.ts': ['rollup'],
+      'src/**/*.spec.ts': ['rollup']
     },
 
     rollupPreprocessor: {
@@ -119,7 +119,7 @@ module.exports = function(config) {
         typescript({
           typescript: require('./node_modules/typescript')
         }),
-        uglify({}, uglifyEs.minify)
+        // uglify({}, uglifyEs.minify)
       ]
     },
 
