@@ -2,8 +2,18 @@
 
 # @ngx-form/material
 
-Angular Material components to set html dynamic elements configuration of @ngx-form/element package
+[![Build Status](https://travis-ci.org/ngx-form/material.svg)](https://travis-ci.org/ngx-form/material)
+[![Semver](http://img.shields.io/SemVer/2.0.0.png)](http://semver.org/spec/v2.0.0.html)
+[![npm version](https://badge.fury.io/js/%40ngx-form%2Fmaterial.svg)](https://badge.fury.io/js/%40ngx-form%2Fmaterial)
+[![GitHub version](https://badge.fury.io/gh/ngx-form%2Fmaterial.svg)](https://badge.fury.io/gh/ngx-form%2Fmaterial)
 
+[![Known Vulnerabilities](https://snyk.io/test/npm/@ngx-form/material/badge.svg)](https://snyk.io/test/npm/@ngx-form/material)
+[![GitHub issues](https://img.shields.io/github/issues/ngx-form/material.svg)](https://github.com/ngx-form/material/issues)
+[![GitHub forks](https://img.shields.io/github/forks/ngx-form/material.svg)](https://github.com/ngx-form/material/network)
+[![GitHub stars](https://img.shields.io/github/stars/ngx-form/material.svg)](https://github.com/ngx-form/material/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ngx-form/material/master/LICENSE)
+
+Angular Material components to set html dynamic elements configuration of `@ngx-form/element` package.
 
 ** **Work in progress** **
 
