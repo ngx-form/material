@@ -9,7 +9,8 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import { MdInputDirective } from '@angular/material';
+import { MdInput } from '@angular/material';
+// @ngx
 import { FormElementComponent } from '@ngx-form/element';
 
 // internal
@@ -20,7 +21,7 @@ import { ElementAbstractClass } from './../element.class';
   templateUrl: './input.component.html'
 })
 export class FormMaterialInputComponent extends ElementAbstractClass implements OnInit {
-  @ViewChild('input', { read: MdInputDirective }) input: MdInputDirective;
+  @ViewChild('input', { read: MdInput }) input: MdInput;
   @ViewChild('input', { read: ElementRef }) inputElementRef: ElementRef;
   ready = false;
   differ = {};
