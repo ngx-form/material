@@ -1,7 +1,7 @@
 {
   "name": "@ngx-form/material",
   "version": "1.0.3-beta",
-  "description": "Angular Material components to set html dynamic elements configuration of @ngx-form/element package",
+  "description": "Angular Material components to set html dynamic elements configuration of `@ngx-form/element package`",
   "author": "Ścibor Rudnicki <scibor.rudnicki@wwwdev.io> (http://ngx-form.wwwwdev.io)",
   "homepage": "https://github.com/ngx-form/material#readme",
   "main": "dist/bundle.umd.js",
@@ -30,8 +30,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@ngx-form/element": "^2.0.13",
-    "@ngx-form/type": "^0.1.6"
+    "@ngx-form/type": "^0.1.6",
+    "@types/lodash-es": "^4.14.6",
+    "lodash-es": "^4.17.4"
   },
   "devDependencies": {
     "@angular/animations": "^4.4.0-RC.0",
@@ -45,10 +46,10 @@
     "@angular/material": "^2.0.0-beta.10",
     "@angular/platform-browser": "^4.4.0-RC.0",
     "@angular/platform-browser-dynamic": "^4.4.0-RC.0",
+    "@ngx-form/element": "^2.0.13",
     "@ngx-form/interface": "^0.7.0",
     "@types/jasmine": "^2.5.54",
     "@types/karma": "^0.13.36",
-    "@types/lodash": "^4.14.74",
     "@types/node": "^8.0.26",
     "clean-css": "^4.1.8",
     "codelyzer": "^3.1.2",
@@ -65,7 +66,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-rollup-preprocessor": "^5.0.1",
     "karma-typescript": "^3.0.5",
-    "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
     "reflect-metadata": "^0.1.10",
     "rimraf": "^2.6.1",
@@ -80,6 +80,11 @@
     "typescript": "^2.5.2",
     "uglify-es": "^3.0.28",
     "zone.js": "^0.8.17"
+  },
+  "peerDependencies": {
+    "@angular/material": ">=2.0.0-beta.10",
+    "@ngx-form/interface": ">=0.7.0",
+    "@ngx-form/element": ">=2.0.13"
   },
   "keywords": [
     "Angular"
