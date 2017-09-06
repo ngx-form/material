@@ -15,10 +15,9 @@
 
 Angular Material components to set html dynamic elements configuration of `@ngx-form/element` package.
 
-** **Work in progress** **
+----
 
-
-## Table of contents
+* [Documentation site](#documentation)
 * [Demo](#demo)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -27,10 +26,13 @@ Angular Material components to set html dynamic elements configuration of `@ngx-
 * [License](#license)
 * [Donate](#donate)
 
+----
+
+## Documentation
+[http://ngx-form.wwwdev.io](http://ngx-form.wwwdev.io)
 
 ## Demo
-
-Usage demonstration of a @ngx-form/material package coming soon
+Angular-cli demonstration on [Github](https://github.com/ngx-form/demo)
 
 ## Installation
 
