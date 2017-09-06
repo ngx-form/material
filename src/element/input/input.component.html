@@ -1,7 +1,7 @@
 <div [formGroup]="formGroup" *ngIf="formGroup && key">
 
   <!-- Container -->
-  <md-input-container
+  <md-form-field
     *ngIf="element && model && attributes?.type"
     [color]="attributes?.color"
     [floatPlaceholder]="attributes?.floatPlaceholder"
@@ -67,6 +67,6 @@
 
     <md-error [innerHTML]="error?.message"></md-error>
 
-  </md-input-container>
+  </md-form-field>
 
 </div>
