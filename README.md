@@ -37,7 +37,11 @@ Usage demonstration of a @ngx-form/material package coming soon
 To install, run:
 
 ```bash
-npm install --save @ngx-form/material
+npm install --save 
+  @angular/material@2.0.0-beta.10
+  @ngx-form/material 
+  @ngx-form/interface@0.7.0 
+  @ngx-form/element@2.0.13
 ```
 
 ## Usage
