@@ -1,13 +1,15 @@
 // external
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
-// internal
+
+// @ngx
 import { FormElementModule } from '@ngx-form/element';
+
+// internal
 import { FormMaterialInputComponent } from './element';
-// get config
-import { elementsConfig } from './ngx-form-material.config';
+import { elementsConfig } from './ngx-form-material.config'; // get config
 
 @NgModule({
   declarations: [
@@ -18,11 +20,10 @@ import { elementsConfig } from './ngx-form-material.config';
   ],
   imports: [
     CommonModule,
-    FormElementModule.forRoot(elementsConfig),
     MaterialModule,
+    FormElementModule.forRoot(elementsConfig),
+    FormsModule,
     ReactiveFormsModule
   ]
 })
-export class FormMaterialModule {
-  constructor() { }
-}
+export class FormMaterialModule {}
