@@ -1,12 +1,9 @@
 // external
-import { ElementRef, EventEmitter, Output } from '@angular/core';
+import * as lodash from 'lodash-es';
+import { ElementRef, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-const _ = require('lodash');
-// import { get } from 'lodash';
-
-// internal
+// @ngx
 import { element } from '@ngx-form/type';
-
 import { MdInputAttributesInterface } from '@ngx-form/interface';
 
 /**
@@ -21,6 +18,7 @@ export abstract class ElementAbstractClass {
   element: element;
   error: Object;
   focus: boolean;
+  form: FormGroup;
   formGroup: FormGroup;
   formControlName: string;
   key: string;
