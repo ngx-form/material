@@ -65,7 +65,7 @@ module.exports = function(config) {
       // will help to prevent conflicts between different tests entries
       name: 'ngx-form.material',
       format: 'umd',
-      sourcemap: true,
+      sourcemap: 'inline',
       // rollup settings. See Rollup documentation
       plugins: [
         angular({
